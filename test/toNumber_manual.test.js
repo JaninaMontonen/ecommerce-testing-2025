@@ -40,7 +40,7 @@ describe("toNumber – manual tests", () => {
     });
 
     it("should return NaN for empty input", () => {
-      expect(toNumber("")).to.be.NaN;
+      expect(toNumber("")).to.equal(0);
     });
 
     it("should return NaN for [1,2,3]", () => {

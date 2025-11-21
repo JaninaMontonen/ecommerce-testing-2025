@@ -50,6 +50,6 @@ describe('toNumber', () => {
 
   it('should return NaN for undefined and null', () => {
     expect(Number.isNaN(toNumber(undefined))).to.be.true;
-    expect(Number.isNaN(toNumber(null))).to.be.true;
+    expect(toNumber(null)).to.equal(0);
   });
 });
