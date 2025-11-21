@@ -8,6 +8,11 @@
     "test": "mocha",
     "coverage": "c8 mocha"
   },
+  "c8": {
+    "exclude": [
+      "src/.internal/*"
+    ]
+  },  
   "author": "",
   "license": "MIT",
   "devDependencies": {
