@@ -2,8 +2,8 @@
 import { expect } from "chai";
 import toNumber from "../src/toNumber.js";
 
-describe('toNumber', () => {
-  // Positiiviset testit
+describe('toNumber - ai tests from phase 2', () => {
+  // Positive tests
   it('should return the same number if input is a number', () => {
     expect(toNumber(3.2)).to.equal(3.2);
     expect(toNumber(Number.MIN_VALUE)).to.equal(Number.MIN_VALUE);
@@ -30,7 +30,7 @@ describe('toNumber', () => {
     expect(toNumber(obj)).to.equal(7);
   });
 
-  // Negatiiviset testit
+  // Negative tests
   it('should return NaN for symbol', () => {
     expect(Number.isNaN(toNumber(Symbol('test')))).to.be.true;
   });
@@ -48,7 +48,7 @@ describe('toNumber', () => {
     expect(Number.isNaN(toNumber({ foo: 'bar' }))).to.be.true;
   });
 
-  it('should return NaN for undefined and null', () => {
+  it('should return NaN for undefined and 0 for null', () => {
     expect(Number.isNaN(toNumber(undefined))).to.be.true;
     expect(toNumber(null)).to.equal(0);
   });
