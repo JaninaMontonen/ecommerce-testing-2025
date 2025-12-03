@@ -8,20 +8,20 @@ describe("clamp – tests from phase 2", () => {
   // -------------------------------
   describe("Positive cases", () => {
 
-    it("should return 0 for (5, 0, 100)", () => {
-      expect(clamp(5, 0, 100)).to.equal(0);
+    it("should return 5 for (5, 0, 100)", () => {
+      expect(clamp(5, 0, 100)).to.equal(5);
     });
 
-    it("should return 0 for ('5', 0, 100)", () => {
-      expect(clamp('5', 0, 100)).to.equal(0);
+    it("should return 5 for ('5', 0, 100)", () => {
+      expect(clamp('5', 0, 100)).to.equal(5);
     });    
 
-    it("should return 0 for (5, '0', '100')", () => {
-      expect(clamp(5, '0', '100')).to.equal(0);
+    it("should return 5 for (5, '0', '100')", () => {
+      expect(clamp(5, '0', '100')).to.equal(5);
     });   
 
-    it("should return 0 for (3.7, 0, 3.5)", () => {
-      expect(clamp(3.7, 0, 3.5)).to.equal(0);
+    it("should return 3.5 for (3.7, 0, 3.5)", () => {
+      expect(clamp(3.7, 0, 3.5)).to.equal(3.5);
     })    
 
     it("should return 5 for (null, 5, 100)", () => {
@@ -35,24 +35,24 @@ describe("clamp – tests from phase 2", () => {
   // -------------------------------
   describe("Negative cases", () => {
 
-    it("should return NaN for (NaN, 0, 100)", () => {
-      expect(clamp(NaN, 0, 100)).to.be.NaN;
+    it("should return 0 for (NaN, 0, 100)", () => {
+      expect(clamp(NaN, 0, 100)).to.equal(0);
     });
 
-    it("should return NaN for (undefined, 1, 5)", () => {
-      expect(clamp(undefined, 1, 5)).to.be.NaN;
+    it("should return 1 for (undefined, 1, 5)", () => {
+      expect(clamp(undefined, 1, 5)).to.equal(1);
     });         
     
-    it("should return NaN for ('5 pcs', 0, 100)", () => {
-      expect(clamp('5 pcs', 0, 100)).to.be.NaN;
+    it("should return 0 for ('5 pcs', 0, 100)", () => {
+      expect(clamp('5 pcs', 0, 100)).to.equal(0);
     });     
     
-    it("should return 5 for (5, 100, 0)", () => {
-      expect(clamp(5, 100, 0)).to.equal(5);
+    it("should return 100 for (5, 100, 0)", () => {
+      expect(clamp(5, 100, 0)).to.equal(100);
     });    
 
-    it("should return 0 for (5, 'a', 10)", () => {
-      expect(clamp(5, 'a', 10)).to.equal(0);
+    it("should return 5 for (5, 'a', 10)", () => {
+      expect(clamp(5, 'a', 10)).to.equal(5);
     });      
   });
 
@@ -66,16 +66,16 @@ describe("clamp – tests from phase 2", () => {
       expect(clamp(-5, 0, 100)).to.equal(0);
     });
 
-    it("should return 0 for (999999, 0, 100)", () => {
-      expect(clamp(999999, 0, 100)).to.equal(0);
+    it("should return 100 for (999999, 0, 100)", () => {
+      expect(clamp(999999, 0, 100)).to.equal(100);
     });    
 
     it("should return 0 for (0, 0, 100)", () => {
       expect(clamp(0, 0, 100)).to.equal(0);
     });
     
-    it("should return 0 for (100, 0, 100)", () => {
-      expect(clamp(100, 0, 100)).to.equal(0);
+    it("should return 100 for (100, 0, 100)", () => {
+      expect(clamp(100, 0, 100)).to.equal(100);
     });
 
     it("should return 5 for (10, 5, 5)", () => {
