@@ -8,29 +8,23 @@ describe("toInteger – tests from phase 2", () => {
   // -------------------------------
   describe("Positive cases", () => {
 
-    it("should return 2 for 2.1", () => {
+    it("should return the nearest integer toward zero for a float", () => {
       expect(toInteger(2.1)).to.equal(2);
-    });
-
-    it("should return -2 for -2.1", () => {
       expect(toInteger(-2.1)).to.equal(-2);
     });
     
-    it("should return 2 for 2", () => {
+    it("should return the same integer if the input is already an integer", () => {
       expect(toInteger(2)).to.equal(2);
     });
     
-    it("should return 2 for ' 2.1 '", () => {
+    it("should return an integer for a numeric string", () => {
       expect(toInteger(' 2.1 ')).to.equal(2);
     });
     
-    it("should return 0 for 0", () => {
+    it("should return 0 for 0 and null", () => {
       expect(toInteger(0)).to.equal(0);
-    });   
-    
-    it("should return 0 for null", () => {
       expect(toInteger(null)).to.equal(0);
-    });    
+    });   
   });
 
 
@@ -39,23 +33,20 @@ describe("toInteger – tests from phase 2", () => {
   // -------------------------------
   describe("Negative cases", () => {
 
-    it("should return 0 for 'a1b2c3'", () => {
+    it("should return 0 for an input that cannot be converted to a number", () => {
       expect(toInteger('a1b2c3')).to.equal(0);
+      expect(toInteger({})).to.equal(0);
     });
     
-    it("should return 0 for {}", () => {
-      expect(toInteger({})).to.equal(0);
-    });  
-    
-    it("should return 0 for '2,1'", () => {
+    it("should return 0 for a numeric string with comma decimal", () => {
       expect(toInteger('2,1')).to.equal(0);
     });
     
-    it("should return 0 for empty input", () => {
+    it("should return 0 for an empty input", () => {
       expect(toInteger('')).to.equal(0);
     });    
     
-    it("should return 0 for undefined", () => {
+    it("should return 0 for an undefined input", () => {
       expect(toInteger(undefined)).to.equal(0);
     });    
   });
@@ -66,11 +57,11 @@ describe("toInteger – tests from phase 2", () => {
   // -------------------------------
   describe("Boundary cases", () => {
 
-    it("should return 0 for Number.MIN_VALUE", () => {
+    it("should return 0 for the smallest possible numeric value (Number.MIN_VALUE)", () => {
       expect(toInteger(Number.MIN_VALUE)).to.equal(0);
     });
 
-    it("should return 1.7976931348623157e+308 for Infinity", () => {
+    it("should return a large integer (1.7976931348623157e+308) for Infinity", () => {
       expect(toInteger(Infinity)).to.equal(1.7976931348623157e+308);
     });    
   });
