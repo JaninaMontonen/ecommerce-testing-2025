@@ -32,23 +32,23 @@ describe("clamp – tests from phase 2", () => {
   // -------------------------------
   describe("Negative cases", () => {
 
-    it("should treat NaN as 0 and clamp to lower bound", () => {
-      expect(clamp(NaN, 0, 100)).to.equal(0);
+    it("should return NaN for the NaN value ", () => {
+      expect(clamp(NaN, 0, 100)).to.be.NaN;
     });
 
-    it("should treat undefined as NaN (0) and clamp to lower bound", () => {
-      expect(clamp(undefined, 1, 5)).to.equal(1);
+    it("should return NaN for undefined", () => {
+      expect(clamp(undefined, 1, 5)).to.be.NaN;
     });         
     
-    it("should convert non-numeric value to NaN (0) and clamp to lower bound", () => {
-      expect(clamp('5 pcs', 0, 100)).to.equal(0);
+    it("should return NaN for non-numeric value", () => {
+      expect(clamp('5 pcs', 0, 100)).to.be.NaN;
     });     
     
     it("should return 100 for an invalid range", () => {
       expect(clamp(5, 100, 0)).to.equal(100);
     });    
 
-    it("should convert non-numeric boundary value to NaN (0) and return the value ", () => {
+    it("should convert non-numeric boundary value to 0 and return the value ", () => {
       expect(clamp(5, 'a', 10)).to.equal(5);
     });      
   });
