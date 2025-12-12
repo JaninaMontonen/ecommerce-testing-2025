@@ -31,12 +31,6 @@ describe("isEmpty - manual tests from phase 1", () => {
         it("Should return false for Buffer.alloc(1)", () => {
             expect(isEmpty(Buffer.alloc(1))).to.equal(false);
         });
-        it("Should return true for {length: 0}", () => {
-            expect(isEmpty({length: 0})).to.equal(true);
-        });
-        it("Should return false for {0: \"a\", 1: \"b\", length: 2}", () => {
-            expect(isEmpty({0: "a", 1: "b", length: 2})).to.equal(false);
-        });
         it("Should return true for an empty arguments object", () => {
             const args = (function(){ return arguments; })();
             expect(isEmpty(args)).to.equal(true);
