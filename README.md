@@ -6,6 +6,9 @@ This repository is based on the project template provided for the Software Testi
 
 The repository contains the source code that is under testing, an updated `package.json` file, `package-lock.json` file, the unit tests created as part of the assignment, .gitignore file, the GitHub Actions pipeline configuration for automated testing and coverage reporting and LICENSE file.
 
+Coverage Badge:
+[![Coverage Status](https://coveralls.io/repos/github/JaninaMontonen/ecommerce-testing-2025/badge.svg?branch=main)](https://coveralls.io/github/JaninaMontonen/ecommerce-testing-2025?branch=main)
+
 Source code folder contains a separate license file that must **NOT** be removed under any circumstances!
 Removing this license file directly violates terms and conditions of the software under testing.
 Individuals who remove or modify the license file will also carry the consequences.
