@@ -12,7 +12,7 @@
     "exclude": [
       "src/.internal/*"
     ]
-  },  
+  },
   "author": "",
   "license": "MIT",
   "devDependencies": {
